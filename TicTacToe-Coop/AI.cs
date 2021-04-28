@@ -13,7 +13,7 @@ namespace TicTacToe_Coop
             this.hra = hra;
         }
 
-        public static int[,] Vypln()
+        public int[,] Hraj()
         {
             int[,] volnePole;
             List<int[,]> poleVolnychPoli = new List<int[,]>();
@@ -22,7 +22,7 @@ namespace TicTacToe_Coop
             {
                 for (int y = 0; y > -3; y--)
                 {
-                    if (Hra.Obsazeno() == false)
+                    if (this.hra.Obsazeno(x, y) == false)
                     {
                         volnePole = new int[x, y];
                         poleVolnychPoli.Add(volnePole);
