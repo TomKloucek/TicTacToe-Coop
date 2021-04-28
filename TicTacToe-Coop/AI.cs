@@ -13,7 +13,7 @@ namespace TicTacToe_Coop
             this.hra = hra;
         }
 
-        public static void Vypln()
+        public static int[,] Vypln()
         {
             int[,] volnePole;
             List<int[,]> poleVolnychPoli = new List<int[,]>();
@@ -22,15 +22,15 @@ namespace TicTacToe_Coop
             {
                 for (int y = 0; y > -3; y--)
                 {
-                    /*if (Hra.Obsazeno() == false)
+                    if (Hra.Obsazeno() == false)
                     {
                         volnePole = new int[x, y];
                         poleVolnychPoli.Add(volnePole);
-                    }*/
+                    }
                 }
             }
             int index = rnd.Next(poleVolnychPoli.Count);
-            Console.WriteLine(poleVolnychPoli[index]);
+            return poleVolnychPoli[index];
         }
     }
 }
