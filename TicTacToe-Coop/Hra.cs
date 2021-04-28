@@ -74,22 +74,11 @@ namespace TicTacToe_Coop
 
         public bool VyhralX(int x,int y, char hrac)
         {
+            // diagonala
             int pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && y + i < this.velikost-1 && y+i >= 0 && x-i < this.velikost-1))
-                {
-                    break;
-                }
-                if (hraciPole[x - i, y + i] == hrac) { pocet++; }
-                else
-                {
-                    break;
-                }
-            }
-            for (int i = 1; i < 3; i++)
-            {
-                if (!(x + i >= 0 && x+i < this.velikost-1 && y - i < this.velikost-1 && y-i >= 0))
+                if (!(x + i < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
@@ -99,14 +88,28 @@ namespace TicTacToe_Coop
                     break;
                 }
             }
+            for (int i = 1; i < 3; i++)
+            {
+                if (!(x-i >= 0 && y+i < this.velikost-1))
+                {
+                    break;
+                }
+                if (hraciPole[x - i, y + i] == hrac) { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
             if (pocet >= 3)
             {
                 return true;
             }
+
+            // druha diagonala
             pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && x+i < this.velikost-1 && y - i < this.velikost-1 && y - i >= 0))
+                if (!(x + i < this.velikost-1 && y + i < this.velikost-1))
                 {
                     break;
                 }
@@ -118,7 +121,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && y - i < this.velikost-1 && y - i >= 0 && x-i < this.velikost-1))
+                if (!(x - i >= 0 && y - i >= 0))
                 {
                     break;
                 }
@@ -133,9 +136,11 @@ namespace TicTacToe_Coop
                 return true;
             }
             pocet = 1;
+
+            // vodorovne
             for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && x+1 < this.velikost-1 && y < this.velikost-1 && y - i >= 0))
+                if (!(x + i < velikost-1))
                 {
                     break;
                 }
@@ -147,7 +152,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && x-1 < this.velikost-1 && y < this.velikost-1 && y >= 0))
+                if (!(x - i >= 0))
                 {
                     break;
                 }
@@ -161,14 +166,16 @@ namespace TicTacToe_Coop
             {
                 return true;
             }
+
+            // svisle
             pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x >= 0 && x < this.velikost-1 && y - i < this.velikost-1 && y - i >= 0))
+                if (!(y - i >= 0))
                 {
                     break;
                 }
-                if (hraciPole[x, y-1] == hrac) { pocet++; }
+                if (hraciPole[x, y-i] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -176,17 +183,17 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x >= 0 && x < this.velikost-1 && y + i < this.velikost-1 && y - i >= 0))
+                if (!(y + i < this.velikost-1))
                 {
                     break;
                 }
-                if (hraciPole[x , y+1] == hrac) { pocet++; }
+                if (hraciPole[x , y+i] == hrac) { pocet++; }
                 else
                 {
                     break;
                 }
             }
-            if(x >= 3)
+            if(pocet >= 3)
             {
                 return true;
             }
