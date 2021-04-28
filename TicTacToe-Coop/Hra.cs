@@ -23,6 +23,11 @@ namespace TicTacToe_Coop
           while(winHrac == false && winAI == false)
             {
                 winHrac = Hrac();
+                if (CheckDraw())
+                {
+                    Console.WriteLine("Remiza");
+                    break;
+                }
                 winAI = ai.Hraj();
                 this.Vypis();
             }
@@ -36,7 +41,7 @@ namespace TicTacToe_Coop
             }
         }
 
-        public bool Obsazeno(int y, int x)
+        public bool Obsazeno(int x, int y)
     {
         if (hraciPole[x,y] == '-')
             {
@@ -47,6 +52,23 @@ namespace TicTacToe_Coop
                 return true;
             }
     }
+
+        public bool CheckDraw()
+        {
+            int volne = 0;
+            for (int i = 0; i < velikost; i++)
+            {
+                for(int j =0;j < velikost; j++)
+                {
+                    if (hraciPole[i,j] == '-') { volne++; }
+                }
+            }
+            if (volne> 0)
+            {
+                return false;
+            }
+            else { return true; }
+        }
 
         public bool Hrac()
         {
@@ -59,7 +81,8 @@ namespace TicTacToe_Coop
                 string[] tah = Console.ReadLine().Split();
                 y = int.Parse(tah[0]);
                 x = int.Parse(tah[1]);
-                if (!Obsazeno(y, x))
+                if (y > velikost - 1 && x > velikost - 1 && x <= 0 && y <= 0) { continue; }
+                if (!Obsazeno(x, y))
                 {
                     pouzitelny = true;
                 }
@@ -202,9 +225,9 @@ namespace TicTacToe_Coop
 
         public void Vypis()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < velikost; i++)
             {
-                for (int j = 0; j < 5; j++)
+                for (int j = 0; j < velikost; j++)
                 {
                     Console.Write(this.hraciPole[i, j]);
                 }
