@@ -8,6 +8,7 @@ namespace TicTacToe_Coop
     {
         AI ai;
         public char[,] hraciPole;
+        public int velikost;
         public Hra(int velikost)
         {
             this.hraciPole = this.Napln(velikost);
