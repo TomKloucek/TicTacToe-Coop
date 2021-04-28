@@ -6,7 +6,7 @@ namespace TicTacToe_Coop
 {
     class Hra
     {
-        
+        AI ai;
         public char[,] hraciPole;
         public Hra(int velikost)
         {
@@ -15,15 +15,17 @@ namespace TicTacToe_Coop
 
         public void Hraj()
         {
+            this.ai = 
           while(!Konec())
             {
-                
+                Hrac();
+                AI.Hraj();
             }
         }
 
-        public bool Obasazeno(int y, int x)
+        public bool Obsazeno(int y, int x)
     {
-        if (hraciPole[y,x] == '-')
+        if (hraciPole[x,y] == '-')
             {
                 return false;
             }
@@ -33,13 +35,23 @@ namespace TicTacToe_Coop
             }
     }
 
-        public Object[] Hrac()
+        public void Hrac()
         {
-            Console.WriteLine("Zadej souradnice ve tvaru y a x");
-            string[] tah = Console.ReadLine().Split();
-            int y = int.Parse(tah[0]);
-            int x = int.Parse(tah[1]);
-
+            bool pouzitelny = false;
+            int x = 0;
+            int y = 0;
+            while(!pouzitelny)
+            {
+                Console.WriteLine("Zadej souradnice ve tvaru y a x");
+                string[] tah = Console.ReadLine().Split();
+                y = int.Parse(tah[0]);
+                x = int.Parse(tah[1]);
+                if (!Obsazeno(y, x))
+                {
+                    pouzitelny = true;
+                }
+            }
+            this.hraciPole[x, y] = 'X';
         }
         public bool Konec()
         {
