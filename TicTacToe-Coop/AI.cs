@@ -15,8 +15,9 @@ namespace TicTacToe_Coop
 
         public void Hraj()
         {
-            int[] volnePole;
-            List<int[]> poleVolnychPoli = new List<int[]>();
+            bool obsazeno = true;
+            int prvni = 0;
+            int druha = 0;
             Random rnd = new Random();
             /*for (int x = 0; x<hra.velikost; x++)
             {
@@ -30,7 +31,16 @@ namespace TicTacToe_Coop
                 }
             }
             int index = rnd.Next(poleVolnychPoli.Count);*/
-            hra.hraciPole[rnd.Next(hra.velikost), rnd.Next(hra.velikost)] = 'O';
+            while (obsazeno)
+            {
+                prvni = rnd.Next(hra.velikost);
+                druha = rnd.Next(hra.velikost);
+                if (this.hra.Obsazeno(prvni, druha) == false)
+                {
+                    obsazeno = false;
+                }
+            }
+            hra.hraciPole[prvni, druha] = 'O';
         }
     }
 }
