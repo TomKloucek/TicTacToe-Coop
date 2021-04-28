@@ -16,6 +16,8 @@ namespace TicTacToe_Coop
         public bool Hraj()
         {
             bool obsazeno = true;
+            int prvniDohrana = 0;
+            int druhaDohrana = 0;
             int prvni = 0;
             int druha = 0;
             Random rnd = new Random();
@@ -28,6 +30,20 @@ namespace TicTacToe_Coop
                     obsazeno = false;
                 }
             }
+            
+
+            /*while (obsazeno)
+            {
+                prvniDohrana = hra.posledni[0];
+                druhaDohrana = hra.posledni[1];
+                druha = rnd.Next(hra.velikost);
+                if (this.hra.Obsazeno(prvni, druha) == false)
+                {
+                    obsazeno = false;
+                }
+            }*/
+
+
             hra.hraciPole[prvni, druha] = 'O';
             return hra.Konec(prvni, druha);
         }
