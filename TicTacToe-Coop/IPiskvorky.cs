@@ -32,9 +32,9 @@ namespace TicTacToe_Coop
         }
 
         public bool Obasazeno()
-    {
-        return false;
-    }
+        {
+            return false;
+        }
 
         public bool Konec()
         {
