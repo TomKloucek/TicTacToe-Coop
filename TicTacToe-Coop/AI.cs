@@ -29,7 +29,7 @@ namespace TicTacToe_Coop
                 }
             }
             hra.hraciPole[prvni, druha] = 'O';
-            return hra.Konec(prvni, druha);
+            return hra.Konec(prvni, druha,'O');
         }
     }
 }

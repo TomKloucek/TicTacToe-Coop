@@ -57,7 +57,6 @@ namespace TicTacToe_Coop
             {
                 Console.WriteLine("Zadej souradnice ve tvaru y a x");
                 string[] tah = Console.ReadLine().Split();
-                Console.WriteLine(tah[1]);
                 y = int.Parse(tah[0]);
                 x = int.Parse(tah[1]);
                 if (!Obsazeno(y, x))
@@ -66,14 +65,14 @@ namespace TicTacToe_Coop
                 }
             }
             this.hraciPole[x, y] = 'X';
-            return Konec(x, y);
+            return Konec(x, y,'X');
         }
-        public bool Konec(int x,int y)
+        public bool Konec(int x,int y, char hrac)
         {         
-            return VyhralX(x,y);
+            return VyhralX(x,y,hrac);
         }
 
-        public bool VyhralX(int x,int y)
+        public bool VyhralX(int x,int y, char hrac)
         {
             int pocet = 1;
             for (int i = 1; i < 3; i++)
@@ -82,7 +81,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                if (hraciPole[x - i, y + i] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -94,7 +93,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x + i, y - i] == 'X') { pocet++; }
+                if (hraciPole[x + i, y - i] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -111,7 +110,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x + i, y + i] == 'X') { pocet++; }
+                if (hraciPole[x + i, y + i] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -123,7 +122,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x - i, y - i] == 'X') { pocet++; }
+                if (hraciPole[x - i, y - i] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -140,7 +139,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x+i, y] == 'X') { pocet++; }
+                if (hraciPole[x+i, y] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -152,7 +151,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x - i, y] == 'X') { pocet++; }
+                if (hraciPole[x - i, y] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -169,7 +168,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x, y-1] == 'X') { pocet++; }
+                if (hraciPole[x, y-1] == hrac) { pocet++; }
                 else
                 {
                     break;
@@ -181,7 +180,7 @@ namespace TicTacToe_Coop
                 {
                     break;
                 }
-                if (hraciPole[x , y+1] == 'X') { pocet++; }
+                if (hraciPole[x , y+1] == hrac) { pocet++; }
                 else
                 {
                     break;
