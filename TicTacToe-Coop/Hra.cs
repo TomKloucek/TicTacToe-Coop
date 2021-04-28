@@ -17,8 +17,10 @@ namespace TicTacToe_Coop
 
         public void Hraj()
         {
+            bool winHrac = false;
+            bool winAI = false;
             this.ai = new AI(this);
-          while(!Konec())
+          while(winHrac == false && winAI == false)
             {
                 Hrac();
                 ai.Hraj();
@@ -38,7 +40,7 @@ namespace TicTacToe_Coop
             }
     }
 
-        public void Hrac()
+        public bool Hrac()
         {
             bool pouzitelny = false;
             int x = 0;
@@ -56,9 +58,131 @@ namespace TicTacToe_Coop
                 }
             }
             this.hraciPole[x, y] = 'X';
+            return Konec(x, y);
         }
-        public bool Konec()
+        public bool Konec(int x,int y)
+        {         
+            return VyhralX(x,y);
+        }
+
+        public bool VyhralX(int x,int y)
         {
+            int pocet = 1;
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x - 1 >= 0 && y + 1 < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x + i >= 0 && y - i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            if (pocet >= 3)
+            {
+                return true;
+            }
+            pocet = 1;
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x + i >= 0 && y + i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x - i >= 0 && y - i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            if (pocet >= 3)
+            {
+                return true;
+            }
+            pocet = 1;
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x + i >= 0 && y + i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x-1, y] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x - i >= 0 && y - i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x + i, y] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            if (pocet >= 3)
+            {
+                return true;
+            }
+            pocet = 1;
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x >= 0 && y - i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x - 1, y] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = 1; i < 5; i++)
+            {
+                if (!(x >= 0 && y + i < this.velikost))
+                {
+                    break;
+                }
+                if (hraciPole[x + i, y] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            if(x >= 3)
+            {
+                return true;
+            }
             return false;
         }
 
