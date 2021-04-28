@@ -22,6 +22,7 @@ namespace TicTacToe_Coop
             {
                 Hrac();
                 ai.Hraj();
+                this.Vypis();
             }
         }
 
