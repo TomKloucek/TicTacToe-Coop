@@ -6,7 +6,8 @@ namespace TicTacToe_Coop
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Hra h = new Hra(5);
+            
         }
     }
 }
