@@ -13,24 +13,23 @@ namespace TicTacToe_Coop
             this.hra = hra;
         }
 
-        public void Hraj()
+        public bool Hraj()
         {
-            int[] volnePole;
-            List<int[]> poleVolnychPoli = new List<int[]>();
+            bool obsazeno = true;
+            int prvni = 0;
+            int druha = 0;
             Random rnd = new Random();
-            for (int x = 0; x<hra.velikost; x++)
+            while (obsazeno)
             {
-                for (int y = 0; y < hra.velikost; y++)
+                prvni = rnd.Next(hra.velikost);
+                druha = rnd.Next(hra.velikost);
+                if (this.hra.Obsazeno(prvni, druha) == false)
                 {
-                    if (this.hra.Obsazeno(x, y) == false)
-                    {
-                        volnePole = new int[] {1,2};
-                        poleVolnychPoli.Add(volnePole);
-                    }
+                    obsazeno = false;
                 }
             }
-            int index = rnd.Next(poleVolnychPoli.Count);
-            hra.hraciPole[poleVolnychPoli[index][0], poleVolnychPoli[index][1]] = 'O';
+            hra.hraciPole[prvni, druha] = 'O';
+            return hra.Konec(prvni, druha);
         }
     }
 }
