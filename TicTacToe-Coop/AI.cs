@@ -36,7 +36,7 @@ namespace TicTacToe_Coop
             {
                 prvniDohrana = hra.posledni[0];
                 druhaDohrana = hra.posledni[1];
-                druha = rnd.Next(hra.velikost);
+                
                 if (this.hra.Obsazeno(prvni, druha) == false)
                 {
                     obsazeno = false;
