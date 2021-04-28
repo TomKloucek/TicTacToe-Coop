@@ -15,11 +15,11 @@ namespace TicTacToe_Coop
 
         public void Hraj()
         {
-            this.ai = 
+            this.ai = new AI(this);
           while(!Konec())
             {
                 Hrac();
-                AI.Hraj();
+                ai.Hraj();
             }
         }
 
