@@ -89,7 +89,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && y - i < this.velikost-1 && y-i >= 0))
+                if (!(x + i >= 0 && y - i < this.velikost-1 && y-i >= 0 && x+i < this.velikost-1))
                 {
                     break;
                 }
