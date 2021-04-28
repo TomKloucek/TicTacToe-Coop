@@ -22,9 +22,17 @@ namespace TicTacToe_Coop
             this.ai = new AI(this);
           while(winHrac == false && winAI == false)
             {
-                Hrac();
-                ai.Hraj();
+                winHrac = Hrac();
+                winAI = ai.Hraj();
                 this.Vypis();
+            }
+          if (winAI == true)
+            {
+                Console.WriteLine("Vyhralo AIcko");
+            }
+            else
+            {
+                Console.WriteLine("Vyhral jsi");
             }
         }
 
