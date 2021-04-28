@@ -77,7 +77,7 @@ namespace TicTacToe_Coop
             int pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && y + i < this.velikost-1))
+                if (!(x - i >= 0 && y + i < this.velikost-1 && y+i >= 0 && x-i < this.velikost-1))
                 {
                     break;
                 }
@@ -89,7 +89,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && y - i < this.velikost-1 && y-i >= 0))
+                if (!(x + i >= 0 && x+i < this.velikost-1 && y - i < this.velikost-1 && y-i >= 0))
                 {
                     break;
                 }
@@ -106,7 +106,7 @@ namespace TicTacToe_Coop
             pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && y + i < this.velikost-1 && y - i >= 0))
+                if (!(x + i >= 0 && x+i < this.velikost-1 && y - i < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
@@ -118,7 +118,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && y - i < this.velikost-1 && y - i >= 0))
+                if (!(x - i >= 0 && y - i < this.velikost-1 && y - i >= 0 && x-i < this.velikost-1))
                 {
                     break;
                 }
@@ -135,7 +135,7 @@ namespace TicTacToe_Coop
             pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && y < this.velikost-1 && y - i >= 0))
+                if (!(x + i >= 0 && x+1 < this.velikost-1 && y < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
@@ -147,7 +147,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && y < this.velikost-1 && y - i >= 0))
+                if (!(x - i >= 0 && x-1 < this.velikost-1 && y < this.velikost-1 && y >= 0))
                 {
                     break;
                 }
@@ -164,7 +164,7 @@ namespace TicTacToe_Coop
             pocet = 1;
             for (int i = 1; i < 3; i++)
             {
-                if (!(x >= 0 && y - i < this.velikost-1 && y - i >= 0))
+                if (!(x >= 0 && x < this.velikost-1 && y - i < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
@@ -176,7 +176,7 @@ namespace TicTacToe_Coop
             }
             for (int i = 1; i < 3; i++)
             {
-                if (!(x >= 0 && y + i < this.velikost-1 && y - i >= 0))
+                if (!(x >= 0 && x < this.velikost-1 && y + i < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
