@@ -13,10 +13,10 @@ namespace TicTacToe_Coop
             this.hra = hra;
         }
 
-        public int[,] Hraj()
+        public void Hraj()
         {
-            int[,] volnePole;
-            List<int[,]> poleVolnychPoli = new List<int[,]>();
+            int[] volnePole;
+            List<int[]> poleVolnychPoli = new List<int[]>();
             Random rnd = new Random();
             for (int x = 0; x<3; x++)
             {
@@ -24,13 +24,13 @@ namespace TicTacToe_Coop
                 {
                     if (this.hra.Obsazeno(x, y) == false)
                     {
-                        volnePole = new int[x, y];
+                        volnePole = new int[] {1,2};
                         poleVolnychPoli.Add(volnePole);
                     }
                 }
             }
             int index = rnd.Next(poleVolnychPoli.Count);
-            return poleVolnychPoli[index];
+            hra.hraciPole[poleVolnychPoli[index][0], poleVolnychPoli[index][1]] = 'O';
         }
     }
 }
