@@ -18,7 +18,7 @@ namespace TicTacToe_Coop
             int[] volnePole;
             List<int[]> poleVolnychPoli = new List<int[]>();
             Random rnd = new Random();
-            for (int x = 0; x<hra.velikost; x++)
+            /*for (int x = 0; x<hra.velikost; x++)
             {
                 for (int y = 0; y < hra.velikost; y++)
                 {
@@ -29,8 +29,8 @@ namespace TicTacToe_Coop
                     }
                 }
             }
-            int index = rnd.Next(poleVolnychPoli.Count);
-            hra.hraciPole[poleVolnychPoli[index][0], poleVolnychPoli[index][1]] = 'O';
+            int index = rnd.Next(poleVolnychPoli.Count);*/
+            hra.hraciPole[rnd.Next(hra.velikost), rnd.Next(hra.velikost)] = 'O';
         }
     }
 }
