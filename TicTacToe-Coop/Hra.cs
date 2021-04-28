@@ -76,9 +76,9 @@ namespace TicTacToe_Coop
         public bool VyhralX(int x,int y)
         {
             int pocet = 1;
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (!(x - 1 >= 0 && y + 1 < this.velikost))
+                if (!(x - i >= 0 && y + i < this.velikost-1))
                 {
                     break;
                 }
@@ -88,13 +88,13 @@ namespace TicTacToe_Coop
                     break;
                 }
             }
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && y - i < this.velikost))
+                if (!(x + i >= 0 && y - i < this.velikost-1 && y-i >= 0))
                 {
                     break;
                 }
-                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                if (hraciPole[x + i, y - i] == 'X') { pocet++; }
                 else
                 {
                     break;
@@ -105,54 +105,25 @@ namespace TicTacToe_Coop
                 return true;
             }
             pocet = 1;
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (!(x + i >= 0 && y + i < this.velikost))
+                if (!(x + i >= 0 && y + i < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
-                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
+                if (hraciPole[x + i, y + i] == 'X') { pocet++; }
                 else
                 {
                     break;
                 }
             }
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (!(x - i >= 0 && y - i < this.velikost))
+                if (!(x - i >= 0 && y - i < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
-                if (hraciPole[x - i, y + i] == 'X') { pocet++; }
-                else
-                {
-                    break;
-                }
-            }
-            if (pocet >= 3)
-            {
-                return true;
-            }
-            pocet = 1;
-            for (int i = 1; i < 5; i++)
-            {
-                if (!(x + i >= 0 && y + i < this.velikost))
-                {
-                    break;
-                }
-                if (hraciPole[x-1, y] == 'X') { pocet++; }
-                else
-                {
-                    break;
-                }
-            }
-            for (int i = 1; i < 5; i++)
-            {
-                if (!(x - i >= 0 && y - i < this.velikost))
-                {
-                    break;
-                }
-                if (hraciPole[x + i, y] == 'X') { pocet++; }
+                if (hraciPole[x - i, y - i] == 'X') { pocet++; }
                 else
                 {
                     break;
@@ -163,25 +134,54 @@ namespace TicTacToe_Coop
                 return true;
             }
             pocet = 1;
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (!(x >= 0 && y - i < this.velikost))
+                if (!(x + i >= 0 && y < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
-                if (hraciPole[x - 1, y] == 'X') { pocet++; }
+                if (hraciPole[x+i, y] == 'X') { pocet++; }
                 else
                 {
                     break;
                 }
             }
-            for (int i = 1; i < 5; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (!(x >= 0 && y + i < this.velikost))
+                if (!(x - i >= 0 && y < this.velikost-1 && y - i >= 0))
                 {
                     break;
                 }
-                if (hraciPole[x + i, y] == 'X') { pocet++; }
+                if (hraciPole[x - i, y] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            if (pocet >= 3)
+            {
+                return true;
+            }
+            pocet = 1;
+            for (int i = 1; i < 3; i++)
+            {
+                if (!(x >= 0 && y - i < this.velikost-1 && y - i >= 0))
+                {
+                    break;
+                }
+                if (hraciPole[x, y-1] == 'X') { pocet++; }
+                else
+                {
+                    break;
+                }
+            }
+            for (int i = 1; i < 3; i++)
+            {
+                if (!(x >= 0 && y + i < this.velikost-1 && y - i >= 0))
+                {
+                    break;
+                }
+                if (hraciPole[x , y+1] == 'X') { pocet++; }
                 else
                 {
                     break;
