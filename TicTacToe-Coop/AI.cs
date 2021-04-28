@@ -18,9 +18,9 @@ namespace TicTacToe_Coop
             int[] volnePole;
             List<int[]> poleVolnychPoli = new List<int[]>();
             Random rnd = new Random();
-            for (int x = 0; x<3; x++)
+            for (int x = 0; x<hra.velikost; x++)
             {
-                for (int y = 0; y > -3; y--)
+                for (int y = 0; y < hra.velikost; y++)
                 {
                     if (this.hra.Obsazeno(x, y) == false)
                     {
