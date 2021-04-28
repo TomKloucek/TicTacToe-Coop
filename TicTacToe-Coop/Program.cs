@@ -7,7 +7,7 @@ namespace TicTacToe_Coop
         static void Main(string[] args)
         {
             Hra h = new Hra(5);
-            
+            h.Hraj();
         }
     }
 }

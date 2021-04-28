@@ -11,6 +11,7 @@ namespace TicTacToe_Coop
         public Hra(int velikost)
         {
             this.hraciPole = this.Napln(velikost);
+            this.velikost = velikost;
         }
 
         public void Hraj()
@@ -44,6 +45,7 @@ namespace TicTacToe_Coop
             {
                 Console.WriteLine("Zadej souradnice ve tvaru y a x");
                 string[] tah = Console.ReadLine().Split();
+                Console.WriteLine(tah[1]);
                 y = int.Parse(tah[0]);
                 x = int.Parse(tah[1]);
                 if (!Obsazeno(y, x))
