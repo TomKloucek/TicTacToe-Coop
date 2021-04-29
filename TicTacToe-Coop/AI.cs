@@ -30,19 +30,6 @@ namespace TicTacToe_Coop
                     obsazeno = false;
                 }
             }
-            
-
-            /*while (obsazeno)
-            {
-                prvniDohrana = hra.posledni[0];
-                druhaDohrana = hra.posledni[1];
-                
-                if (this.hra.Obsazeno(prvni, druha) == false)
-                {
-                    obsazeno = false;
-                }
-            }*/
-
 
             hra.hraciPole[prvni, druha] = 'O';
             return hra.Konec(prvni, druha,'O');
