@@ -9,6 +9,8 @@ namespace TicTacToe_Coop
         AI ai;
         public char[,] hraciPole;
         public int velikost;
+        public int posledniX;
+        public int posledniY;
         public Hra(int velikost)
         {
             this.hraciPole = this.Napln(velikost);
@@ -81,10 +83,14 @@ namespace TicTacToe_Coop
                 string[] tah = Console.ReadLine().Split();
                 y = int.Parse(tah[0]);
                 x = int.Parse(tah[1]);
+                this.posledniX = x;
+                this.posledniY = y;
                 if (y > velikost - 1 && x > velikost - 1 && x <= 0 && y <= 0) { continue; }
                 if (!Obsazeno(x, y))
                 {
                     pouzitelny = true;
+                    this.posledniX = x;
+                    this.posledniY = y;
                 }
             }
             this.hraciPole[x, y] = 'X';
