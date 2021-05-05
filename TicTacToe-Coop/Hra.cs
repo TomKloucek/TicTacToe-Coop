@@ -84,6 +84,10 @@ namespace TicTacToe_Coop
                 string[] tah = Console.ReadLine().Split();
                 y = int.Parse(tah[0]);
                 x = int.Parse(tah[1]);
+                if (x > 2 || y > 2 || x < 0 || y < 0)
+                {
+                    break;
+                }
                 this.posledniX = x;
                 this.posledniY = y;
                 if (y > velikost - 1 && x > velikost - 1 && x <= 0 && y <= 0) { continue; }
@@ -227,7 +231,7 @@ namespace TicTacToe_Coop
             {
                 return true;
             }
-            if (hraciPole[2,0] == hraciPole[1,1] && hraciPole[1,1] == hraciPole[0,2]) { return true; }
+            if (hraciPole[2,0] == hraciPole[1,1] && hraciPole[1,1] == hraciPole[0,2] == && (hraciPole[1,1] == 'X' || hraciPole[1,1] == 'O') ) { return true; }
             return false;
         }
 
