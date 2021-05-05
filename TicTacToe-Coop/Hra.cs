@@ -227,6 +227,7 @@ namespace TicTacToe_Coop
             {
                 return true;
             }
+            if (hraciPole[2,0] == hraciPole[1,1] && hraciPole[1,1] == hraciPole[0,2]) { return true; }
             return false;
         }
 
