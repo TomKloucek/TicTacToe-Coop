@@ -28,6 +28,10 @@ namespace TicTacToe_Coop
                     Console.WriteLine("Remiza");
                     break;
                 }
+                if (winHrac)
+                {
+                    break;
+                }
                 winAI = ai.Hraj();
                 this.Vypis();
             }
@@ -35,7 +39,7 @@ namespace TicTacToe_Coop
             {
                 Console.WriteLine("Vyhralo AIcko");
             }
-            else
+            else if (winHrac == true)
             {
                 Console.WriteLine("Vyhral jsi");
             }
@@ -79,8 +83,8 @@ namespace TicTacToe_Coop
             {
                 Console.WriteLine("Zadej souradnice ve tvaru y a x");
                 string[] tah = Console.ReadLine().Split();
-                y = int.Parse(tah[0]);
-                x = int.Parse(tah[1]);
+                x = int.Parse(tah[0]);
+                y = int.Parse(tah[1]);
                 if (y > velikost - 1 && x > velikost - 1 && x <= 0 && y <= 0) { continue; }
                 if (!Obsazeno(x, y))
                 {
@@ -88,14 +92,10 @@ namespace TicTacToe_Coop
                 }
             }
             this.hraciPole[x, y] = 'X';
-            return Konec(x, y,'X');
-        }
-        public bool Konec(int x,int y, char hrac)
-        {         
-            return VyhralX(x,y,hrac);
+            return Vyhral(x, y,'X');
         }
 
-        public bool VyhralX(int x,int y, char hrac)
+        public bool Vyhral(int x,int y, char hrac)
         {
             // diagonala
             int pocet = 1;

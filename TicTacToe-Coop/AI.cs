@@ -94,16 +94,16 @@ namespace TicTacToe_Coop
                     }
                 }*/
 
-                /*prvni = rnd.Next(hra.velikost);
+                prvni = rnd.Next(hra.velikost);
                 druha = rnd.Next(hra.velikost);
                 if (this.hra.Obsazeno(prvni, druha) == false)
                 {
                     obsazeno = false;
-                }*/
+                }
 
             }
             hra.hraciPole[prvni, druha] = 'O';
-            return hra.Konec(prvni, druha,'O');
+            return hra.Vyhral(prvni, druha,'O');
         }
     }
 }
