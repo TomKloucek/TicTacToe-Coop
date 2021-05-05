@@ -23,7 +23,7 @@ namespace TicTacToe_Coop
 
 
 
-            //Doplnovacka(ref obsazeno, ref prvni, ref druha);
+            Doplnovacka(ref obsazeno, ref prvni, ref druha);
             hra.hraciPole[prvni, druha] = 'O';
             return hra.Konec(prvni, druha, 'O');
         }
