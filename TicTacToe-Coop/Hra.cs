@@ -4,6 +4,7 @@ using System.Text;
 
 namespace TicTacToe_Coop
 {
+    // trida Hra
     class Hra
     {
         AI ai;
