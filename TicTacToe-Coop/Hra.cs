@@ -28,11 +28,13 @@ namespace TicTacToe_Coop
                 winHrac = Hrac();
                 if (winHrac)
                 {
+                    this.Vypis();
                     break;
                 }
                 if (CheckDraw())
                 {
                     Console.WriteLine("Remiza");
+                    this.Vypis();
                     break;
                 }               
                 winAI = ai.Hraj();
@@ -84,7 +86,7 @@ namespace TicTacToe_Coop
             int y = 0;
             while(!pouzitelny)
             {
-                Console.WriteLine("Zadej souradnice ve tvaru y a x");
+                Console.WriteLine("Zadej souradnice ve tvaru x a y");
                 string[] tah = Console.ReadLine().Split();
                 y = int.Parse(tah[0]);
                 x = int.Parse(tah[1]);
