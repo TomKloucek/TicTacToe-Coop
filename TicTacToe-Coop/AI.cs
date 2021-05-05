@@ -18,7 +18,12 @@ namespace TicTacToe_Coop
             bool obsazeno = true;
             int prvni = 0;
             int druha = 0;
-            Doplnovacka(ref obsazeno, ref prvni, ref druha);
+
+
+
+
+
+            //Doplnovacka(ref obsazeno, ref prvni, ref druha);
             hra.hraciPole[prvni, druha] = 'O';
             return hra.Konec(prvni, druha, 'O');
         }
@@ -40,7 +45,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 1 && this.hra.posledniY == 0)
@@ -55,7 +72,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 2 && this.hra.posledniY == 0)
@@ -70,7 +99,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 0 && this.hra.posledniY == 1)
@@ -85,7 +126,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 1 && this.hra.posledniY == 1)
@@ -100,7 +153,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 2 && this.hra.posledniY == 1)
@@ -115,7 +180,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 0 && this.hra.posledniY == 2)
@@ -130,7 +207,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 1 && this.hra.posledniY == 2)
@@ -145,7 +234,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else if (this.hra.posledniX == 2 && this.hra.posledniY == 2)
@@ -160,7 +261,19 @@ namespace TicTacToe_Coop
                     {
                         prvni = rnd.Next(hra.velikost);
                         druha = rnd.Next(hra.velikost);
-                        obsazeno = false;
+                        if (this.hra.Obsazeno(prvni, druha) == false)
+                        {
+                            obsazeno = false;
+                        }
+                        else
+                        {
+                            prvni = rnd.Next(hra.velikost);
+                            druha = rnd.Next(hra.velikost);
+                            if (this.hra.Obsazeno(prvni, druha) == false)
+                            {
+                                obsazeno = false;
+                            }
+                        }
                     }
                 }
                 else
