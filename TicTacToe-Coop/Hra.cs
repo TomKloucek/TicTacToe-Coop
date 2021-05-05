@@ -31,6 +31,10 @@ namespace TicTacToe_Coop
                     Console.WriteLine("Remiza");
                     break;
                 }
+                if (winHrac)
+                {
+                    break;
+                }
                 winAI = ai.Hraj();
                 this.Vypis();
             }
@@ -231,7 +235,7 @@ namespace TicTacToe_Coop
             {
                 return true;
             }
-            if (hraciPole[2,0] == hraciPole[1,1] && hraciPole[1,1] == hraciPole[0,2] && (hraciPole[1,1] == 'X' || hraciPole[1,1] == 'O') ) { return true; }
+            if (hraciPole[2,0] == hraciPole[1,1] && hraciPole[1,1] == hraciPole[0,2] && hraciPole[0,2] == hraciPole[2,0] &&(hraciPole[1,1] == 'X' || hraciPole[1,1] == 'O') ) { return true; }
             return false;
         }
 
